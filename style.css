@@ -1,8 +1,8 @@
 :root {
-  --bg: #000000;          /* black, but not true black */
+  --bg: #052a0d;          /* black, but not true black */
   --panel: #1a1a1e;
   --text: #ffffff;
-  --muted: rgba(255, 255, 255, 0.58);
+  --muted: rgba(249, 242, 242, 0.58);
   --accent: #ff6a3d;
   --line: #ffffff;
   --display: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -50,8 +50,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Navigation ---------- */
 
-.sidebar .logo { display: block; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
-.sidebar .logo img { display: block; height: 56px; width: auto; max-width: 100%; }
+.sidebar .logo { display: block; padding-bottom: 24px; }
+.sidebar .logo img { display: block; width: 100%; max-width: 400px; height: auto; }
 .sidebar .logo-fallback {
   display: grid;
   place-items: center;
