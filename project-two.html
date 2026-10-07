@@ -3,11 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project Two | Your Name</title>
+  <title>Thomas Avery's Portfolio | Project Two</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="detail">
+  <div class="layout">
+
+    <!-- LEFT: navigation -->
+    <aside class="sidebar">
+      <nav class="menu" aria-label="Main">
+        <a class="logo" href="index.html" aria-label="Home">
+          <img src="assets/logo.png" alt="Thomas Avery's logo"
+               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'LOGO'}))">
+        </a>
+        <div class="intro">
+          <p class="role">Video Producer &middot; Digital Media</p>
+          <p class="bio">
+            [One or two sentences in your own voice: what you make, and what makes it yours.]
+          </p>
+        </div>
+        <ul>
+          <li><a href="index.html" class="current">My Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="showreel.html">Showreel</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- RIGHT: project (right two thirds of the screen) -->
+    <main class="projects">
+    <div class="detail">
     <a class="back" href="index.html">&larr; Back to all work</a>
 
     <h1>Project Two</h1>
@@ -25,6 +51,11 @@
       <div><dt>Year</dt><dd>2026</dd></div>
       <div><dt>Tools</dt><dd>Premiere Pro, After Effects</dd></div>
     </dl>
+
+    <section>
+      <h2>The story behind it</h2>
+      <p>[Tell it like you would to a friend: why you wanted to make this, the problem that nearly sank it, or the happy accident that saved it.]</p>
+    </section>
 
     <section>
       <h2>The brief</h2>
@@ -60,9 +91,22 @@
     </section>
 
     <section>
+      <h2>Behind the scenes</h2>
+      <p>[A line about what is happening in these photos or clips.]</p>
+      <div class="gallery">
+        <div class="media" data-placeholder="BTS photo 1"></div>
+        <div class="media" data-placeholder="BTS photo 2"></div>
+        <div class="media" data-placeholder="BTS photo 3"></div>
+      </div>
+    </section>
+
+    <section>
       <h2>Reflection</h2>
       <p>What worked, what you would do differently, and what you learned.</p>
     </section>
-  </main>
+    </div>
+    </main>
+
+  </div>
 </body>
 </html>

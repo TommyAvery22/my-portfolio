@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thomas Avery's Portfolio | About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <!-- LEFT: navigation -->
+    <aside class="sidebar">
+      <nav class="menu" aria-label="Main">
+        <a class="logo" href="index.html" aria-label="Home">
+          <img src="assets/logo.png" alt="Thomas Avery's logo"
+               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'LOGO'}))">
+        </a>
+        <div class="intro">
+          <p class="role">Video Producer &middot; Digital Media</p>
+          <p class="bio">
+            [One or two sentences in your own voice: what you make, and what makes it yours.]
+          </p>
+        </div>
+        <ul>
+          <li><a href="index.html">My Work</a></li>
+          <li><a href="about.html" class="current">About</a></li>
+          <li><a href="showreel.html">Showreel</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- RIGHT: page content (right two thirds of the screen) -->
+    <main class="projects page">
+      <h1>About</h1>
+
+      <div class="media portrait" data-placeholder="Photo or video of me: me.jpg">
+        <img src="assets/me.jpg" alt="Thomas Avery">
+      </div>
+
+      <section>
+        <p class="big">[Your statement in your own words: who you are, what you make and what drives you.]</p>
+        <p>[A paragraph or two about how you got into video, what you were obsessed with growing up, and the projects you enjoy most.]</p>
+      </section>
+
+      <section class="cols">
+        <div>
+          <h2>Skills</h2>
+          <ul>
+            <li>Editing</li>
+            <li>Colour grading</li>
+            <li>Sound design</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Software</h2>
+          <ul>
+            <li>Premiere Pro</li>
+            <li>After Effects</li>
+            <li>DaVinci Resolve</li>
+            <li>Audition</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Equipment</h2>
+          <ul>
+            <li>Camera body / lenses</li>
+            <li>Lighting kit</li>
+            <li>Audio recorder / mics</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cols">
+        <div>
+          <h2>Influences</h2>
+          <ul>
+            <li>[A film or director]</li>
+            <li>[A YouTuber or creator]</li>
+            <li>[A genre or style]</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Outside of video</h2>
+          <ul>
+            <li>[A hobby]</li>
+            <li>[What you listen to while editing]</li>
+            <li>[Something unexpected]</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experience &amp; education</h2>
+        <ul class="timeline">
+          <li><span>2023 &ndash; Present</span> Bachelor of Design (Digital Media), RMIT</li>
+          <li><span>2023</span> Freelance or placement title, Client</li>
+        </ul>
+      </section>
+
+      <!-- Save your CV as assets/cv.pdf -->
+      <section id="cv">
+        <h2>CV</h2>
+        <p>[A line inviting people to read the full version.]</p>
+        <p class="cv-actions">
+          <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener">View CV</a>
+          <a class="btn" href="assets/cv.pdf" download>Download PDF</a>
+        </p>
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>

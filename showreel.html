@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thomas Avery's Portfolio | Showreel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <!-- LEFT: navigation -->
+    <aside class="sidebar">
+      <nav class="menu" aria-label="Main">
+        <a class="logo" href="index.html" aria-label="Home">
+          <img src="assets/logo.png" alt="Thomas Avery's logo"
+               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'LOGO'}))">
+        </a>
+        <div class="intro">
+          <p class="role">Video Producer &middot; Digital Media</p>
+          <p class="bio">
+            [One or two sentences in your own voice: what you make, and what makes it yours.]
+          </p>
+        </div>
+        <ul>
+          <li><a href="index.html">My Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="showreel.html" class="current">Showreel</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- RIGHT: page content (right two thirds of the screen) -->
+    <main class="projects page">
+      <h1>Showreel</h1>
+      <p class="lead">A short cut of my best work. Replace the video below with your own.</p>
+
+      <div class="media" data-placeholder="Video: showreel.mp4">
+        <video controls preload="metadata" poster="assets/showreel-poster.jpg">
+          <source src="assets/showreel.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <p class="note">Running time: 0:00 &middot; Music: [track, artist] &middot; [Why you chose it.]</p>
+    </main>
+
+  </div>
+  <script src="cursor.js"></script>
+</body>
+</html>

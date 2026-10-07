@@ -3,41 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name | Video Production Portfolio</title>
+  <title>Thomas Avery's Portfolio | Things I've Made</title>
   <meta name="description" content="Video production and digital media portfolio.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
   <div class="layout">
 
-    <!-- LEFT: intro -->
+    <!-- LEFT: navigation -->
     <aside class="sidebar">
       <nav class="menu" aria-label="Main">
-        <a class="logo" href="#top" aria-label="Home">
-          <img src="assets/logo.png" alt="Your Name logo"
+        <a class="logo" href="index.html" aria-label="Home">
+          <img src="assets/logo.png" alt="Thomas Avery's logo"
                onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'LOGO'}))">
         </a>
+        <div class="intro">
+          <p class="role">Video Producer &middot; Digital Media</p>
+          <p class="bio">
+            [One or two sentences in your own voice: what you make, and what makes it yours.]
+          </p>
+        </div>
         <ul>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#">Showreel</a></li>
-          <li><a href="mailto:you@example.com">Contact</a></li>
+          <li><a href="index.html" class="current">My Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="showreel.html">Showreel</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
         </ul>
       </nav>
-
-      <div id="about">
-        <h1>Your Name</h1>
-        <p class="role">Video Producer &middot; Digital Media</p>
-        <p class="bio">
-          I plan, shoot and edit video content, from short films to promos.
-          Below is a selection of my recent work and the process behind it.
-        </p>
-      </div>
     </aside>
 
-    <!-- RIGHT: projects -->
+    <!-- RIGHT: projects (right two thirds of the screen) -->
     <main class="projects" id="work">
-      <h2>Selected Work</h2>
+      <h2>Things I've made</h2>
 
       <!-- Video project: swap the files in assets/ for your own -->
       <article class="project">
@@ -90,10 +87,48 @@
         <p class="role-line"><strong>My role:</strong> Motion designer and sound editor.</p>
         <a class="btn" href="project-three.html">View more</a>
       </article>
-
-      <footer class="site">&copy; 2026 Your Name</footer>
+      <!-- Personal / experimental project: shows what you make when nobody is asking -->
+      <article class="project">
+        <div class="media" data-placeholder="Video: project-four.mp4">
+          <video controls preload="metadata" poster="assets/project-four-poster.jpg">
+            <source src="assets/project-four.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="meta">
+          <h3>Project Four</h3>
+          <span class="tag">Personal Project</span>
+        </div>
+        <p>
+          [A passion project or experiment, made just because you wanted to.]
+        </p>
+        <p class="role-line"><strong>My role:</strong> Everything.</p>
+        <a class="btn" href="project-four.html">View more</a>
+      </article>
     </main>
 
   </div>
+
+  <script src="cursor.js"></script>
+  <script>
+    // Hovering a video thumbnail plays a silent preview; clicking takes over normal controls.
+    document.querySelectorAll('.project video').forEach(function (video) {
+      var preview = false;
+      video.addEventListener('mouseenter', function () {
+        if (video.paused) {
+          preview = true;
+          video.muted = true;
+          video.play().catch(function () { preview = false; });
+        }
+      });
+      video.addEventListener('pointerdown', function () { preview = false; });
+      video.addEventListener('mouseleave', function () {
+        if (preview) {
+          video.pause();
+          video.currentTime = 0;
+          preview = false;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
