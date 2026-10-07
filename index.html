@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Video Production Portfolio</title>
+  <meta name="description" content="Video production and digital media portfolio.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <div class="layout">
+
+    <!-- LEFT: intro -->
+    <aside class="sidebar">
+      <nav class="menu" aria-label="Main">
+        <a class="logo" href="#top" aria-label="Home">
+          <img src="assets/logo.png" alt="Your Name logo"
+               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'LOGO'}))">
+        </a>
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#">Showreel</a></li>
+          <li><a href="mailto:you@example.com">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div id="about">
+        <h1>Your Name</h1>
+        <p class="role">Video Producer &middot; Digital Media</p>
+        <p class="bio">
+          I plan, shoot and edit video content, from short films to promos.
+          Below is a selection of my recent work and the process behind it.
+        </p>
+      </div>
+    </aside>
+
+    <!-- RIGHT: projects -->
+    <main class="projects" id="work">
+      <h2>Selected Work</h2>
+
+      <!-- Video project: swap the files in assets/ for your own -->
+      <article class="project">
+        <div class="media" data-placeholder="Video: project-one.mp4">
+          <video controls preload="metadata" poster="assets/project-one-poster.jpg">
+            <source src="assets/project-one.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="meta">
+          <h3>Project One</h3>
+          <span class="tag">Short Film</span>
+        </div>
+        <p>
+          A short description of what this project is and who it was for.
+          One or two sentences is plenty.
+        </p>
+        <p class="role-line"><strong>My role:</strong> Director, camera operator and editor.</p>
+        <a class="btn" href="project-one.html">View more</a>
+      </article>
+
+      <article class="project">
+        <div class="media" data-placeholder="Video: project-two.mp4">
+          <video controls preload="metadata" poster="assets/project-two-poster.jpg">
+            <source src="assets/project-two.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="meta">
+          <h3>Project Two</h3>
+          <span class="tag">Promo</span>
+        </div>
+        <p>
+          A short description of what this project is and who it was for.
+        </p>
+        <p class="role-line"><strong>My role:</strong> Producer and colour grading.</p>
+        <a class="btn" href="project-two.html">View more</a>
+      </article>
+
+      <!-- Non-video project: use a thumbnail image instead -->
+      <article class="project">
+        <div class="media" data-placeholder="Image: project-three.jpg">
+          <img src="assets/project-three.jpg" alt="Project Three thumbnail">
+        </div>
+        <div class="meta">
+          <h3>Project Three</h3>
+          <span class="tag">Motion Graphics</span>
+        </div>
+        <p>
+          A short description of what this project is and who it was for.
+        </p>
+        <p class="role-line"><strong>My role:</strong> Motion designer and sound editor.</p>
+        <a class="btn" href="project-three.html">View more</a>
+      </article>
+
+      <footer class="site">&copy; 2026 Your Name</footer>
+    </main>
+
+  </div>
+</body>
+</html>
