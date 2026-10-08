@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thomas Avery's Portfolio | Linx</title>
+  <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <!-- LEFT: navigation -->
+    <aside class="sidebar">
+      <nav class="menu" aria-label="Main">
+        <a class="logo" href="index.html" aria-label="Home">
+          <img src="assets/title.png" alt="Thomas Avery's logo"
+               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'LOGO'}))">
+        </a>
+        <div class="intro">
+          <p class="role">Video Producer &middot; Digital Media</p>
+          <p class="bio">
+            [One or two sentences in your own voice: what you make, and what makes it yours.]
+          </p>
+        </div>
+        <ul>
+          <li><a href="index.html" class="current">My Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="showreel.html">Showreel</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- RIGHT: project (right two thirds of the screen) -->
+    <main class="projects">
+    <div class="detail">
+    <a class="back" href="index.html">&larr; Back to all work</a>
+
+    <h1>Dating app prototype &ldquo;Linx&rdquo; &amp; product video</h1>
+    <p class="lead">Linx is a dating app that connects people through their personality first, backed by a 50-second product video that shows how it works.</p>
+
+    <div class="media" data-placeholder="Video: project-five.mp4">
+      <video controls preload="metadata" poster="assets/project-five-poster.jpg">
+        <source src="assets/project-five.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <dl class="facts">
+      <div><dt>Type</dt><dd>University project, Collaboration (DMS2, Assignment 2)</dd></div>
+      <div><dt>My role</dt><dd>Concept, UX/UI design, prototype, pitch and product video</dd></div>
+      <div><dt>Year</dt><dd>2024</dd></div>
+      <div><dt>Tools</dt><dd>Figma, After Effects</dd></div>
+    </dl>
+
+    <section>
+      <h2>The story behind it</h2>
+      <p>Most dating apps lead with photos. I wanted to see what would happen if people got to know each other through their personality first, so matches feel like they could actually lead somewhere. My goal was a dating app with a simple, recognisable interface that works for both new and existing dating app users.</p>
+      <p>[Add a personal line: what made you pick dating apps, or what frustrated you about them.]</p>
+    </section>
+
+    <section>
+      <h2>The brief</h2>
+      <p>This was Assignment 2 for Collaboration (DMS2): design an app concept and pitch it with slides and a short video.</p>
+      <p>[Add the exact brief wording.]</p>
+    </section>
+
+    <section>
+      <h2>Research &amp; concept</h2>
+      <p><strong>Existing apps.</strong> I analysed the dating app market to see the range of features out there. There are hundreds of apps, many serving a niche such as a particular personality type or religion, but few that are personality-based. Photo-anonymous apps like Lovetastic and Masked Love don&rsquo;t offer prompts or push users to share specific personality details, so it&rsquo;s harder to picture who someone is from a bio. That gap is the one Linx aims at.</p>
+      <p><strong>Empathy map and user journey.</strong> An empathy map gave me a clearer view of users&rsquo; needs and frustrations, which I used to shape the solutions in Linx. The user journey map showed that the app&rsquo;s structure is fairly simple, and I used it as a guide for my first wireframes. I wanted to focus on the two core components, matchmaking and group events.</p>
+      <div class="gallery">
+        <div class="media" data-placeholder="Empathy map"></div>
+        <div class="media" data-placeholder="User journey map"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Design process</h2>
+      <p><strong>Paper wireframes.</strong> I started with sketches and used paper cutouts to quickly try out the spacing of features and different layouts.</p>
+      <p><strong>Low fidelity prototype.</strong> I then iterated on the sketches digitally. The layout stayed much the same, with some small adjustments now that I could see it on screen, and I tested its usability throughout.</p>
+      <p><strong>Mockup.</strong> The final interface is built around Nielsen&rsquo;s usability heuristics (Nielsen, 1994). I kept the look and layout consistent across the app, and consistent with other dating apps too, since most users will have used one before. I also followed a Figma tutorial on Tinder-style card swipes to build interactive swiping into the prototype.</p>
+      <div class="gallery">
+        <div class="media" data-placeholder="Paper wireframes"></div>
+        <div class="media" data-placeholder="Low fidelity prototype"></div>
+        <div class="media contain" data-placeholder="Figma mockup overview">
+          <img src="assets/project-five-mockup.jpg" alt="Overview of the Linx app screens in Figma">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>How Linx works</h2>
+      <p>People connect through prompts, such as &ldquo;Share your ideal date&rdquo;, and through personality details like a favourite song linked from Spotify. Once two people are connected they can message, share photos and video call, and the app also supports group events.</p>
+      <p>To keep matches meaningful, photos aren&rsquo;t the opening move. After two users have been matched for ten days and exchanged twenty messages, a preselected album of photos is sent to each of them. To keep people engaged, Linx suggests icebreakers if a match hasn&rsquo;t messaged, and sends notifications for matches and likes.</p>
+    </section>
+
+    <section>
+      <h2>Measuring success</h2>
+      <p>I planned to judge how well the design works by tracking:</p>
+      <ul>
+        <li>The percentage of matches that reach the photo sharing stage</li>
+        <li>The length of message chains</li>
+        <li>How often and how much people use the app, as a measure of retention</li>
+        <li>The like and dislike ratio of swipes</li>
+        <li>The number of group events created and attended</li>
+        <li>Satisfaction ratings from surveys and reviews</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>The product video</h2>
+      <p>The 50-second video, shown during the pitch, walks through Linx&rsquo;s features on a phone mockup with simple captions such as &ldquo;connect through prompts&rdquo; and &ldquo;after connecting with another user, you&rsquo;ll be able to share photos and video call&rdquo;. I followed a tutorial on animated gradients in After Effects for the motion, and the sound is free-to-use (CC0) material from Pixabay: two whoosh effects and the track &ldquo;Futuristic Beat&rdquo;.</p>
+      <p>[Add what you used to edit and put the video together.]</p>
+    </section>
+
+    <section>
+      <h2>Goals &amp; benefits</h2>
+      <p>With Linx I want to change how we date, by giving people a place to build authentic connections that start from shared interests and values. By going after this gap in the market, I also hope to push competing apps to put more emphasis on personality.</p>
+    </section>
+
+    <section>
+      <h2>Reflection</h2>
+      <p>[What worked, what you would do differently, and what you learned about designing an app.]</p>
+    </section>
+
+    <section>
+      <h2>References</h2>
+      <ul>
+        <li>Nielsen J (1994) 10 Usability Heuristics for User Interface Design, Nielsen Norman Group</li>
+        <li>Free Apps for Me (2024) 11 Best Dating Apps without Pictures (Android &amp; iOS)</li>
+        <li>Full Stack Designer (2022) &lsquo;Tinder Card Swipe with Interactive Components | Figma Advanced Prototyping&rsquo; [video], YouTube</li>
+        <li>P A N T E R (2023) &lsquo;How to Create Animated Gradient in After Effects&rsquo; [video], YouTube</li>
+        <li>Pixabay: &ldquo;Whoosh&rdquo;, &ldquo;Ambient Metal Whoosh 2&rdquo; and &ldquo;Futuristic Beat&rdquo; (CC0)</li>
+      </ul>
+    </section>
+    </div>
+    </main>
+
+  </div>
+</body>
+</html>

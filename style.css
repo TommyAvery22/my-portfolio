@@ -319,3 +319,41 @@ a { color: inherit; text-decoration: none; }
   transition: opacity 0.2s;
 }
 .cursor.on { opacity: 1; }
+
+/* ---------- Readable body copy: sentence case, a little larger, more spacing ---------- */
+
+.project p,
+.detail .lead,
+.detail section p,
+.detail section li,
+.page .lead,
+.page section p,
+.page section li,
+.page .note,
+.intro .bio,
+.timeline li {
+  text-transform: none;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  letter-spacing: 0.005em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.detail .lead,
+.page .lead { font-size: 1.2rem; color: var(--muted); }
+
+.intro .bio { font-size: 0.98rem; }
+
+.project .role-line { font-size: 0.95rem; color: var(--muted); }
+
+.detail section p + p,
+.page section p + p { margin-top: 1.1em; }
+
+.detail section ul li,
+.page section ul li { margin-top: 0.4em; }
+
+.detail section p,
+.page section p { max-width: 64ch; }
+
+/* Screenshots that should not be cropped to 16:9 */
+.media.contain img { object-fit: contain; background: #f4f4f4; }
