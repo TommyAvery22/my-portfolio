@@ -12,20 +12,18 @@
   if (!els.length) return;
 
   var START = 1;        // seconds to wait after the page loads before the sweep begins
-  var DURATION = 2.2;   // seconds the sweep itself takes, from the first word to the last (not counting row pauses)
+  var DURATION = 2;     // seconds the sweep itself takes, from the first word to the last (not counting row pauses). Bigger is slower.
   var ROW_PAUSE = 0.45; // extra seconds to wait each time the highlighter drops to the next row
 
-  // Ease in and out: slow at the start, fast in the middle, slow at the end.
-  // EASE_IN and EASE_OUT set how strong each end is: 1 is no easing, and bigger numbers make that end gentler.
-  var EASE_IN = 3;      // a longer, slower start
-  var EASE_OUT = 2;     // a softer landing at the end
+  // Ease in and out: slow at the start, fastest in the middle, slow at the end (one smooth curve, no sudden changes in speed).
+  // EASE_IN makes the start even slower: 1 is an even ease, and bigger numbers give a longer, gentler start.
+  var EASE_IN = 1.5;
 
   // Given how far along the text we are (0 to 1), this returns the moment in time (0 to 1)
   // that the highlighter reaches that point.
   function timeAt(progress) {
     var p = Math.min(1, Math.max(0, progress));
-    if (p < 0.5) return 0.5 * Math.pow(2 * p, 1 / EASE_IN);
-    return 1 - 0.5 * Math.pow(2 * (1 - p), 1 / EASE_OUT);
+    return Math.pow(Math.acos(1 - 2 * p) / Math.PI, 1 / EASE_IN);
   }
 
   Array.prototype.forEach.call(els, function (el) {
