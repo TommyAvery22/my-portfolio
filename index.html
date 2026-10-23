@@ -5,51 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thomas Avery's Portfolio | Things I've Made</title>
   <meta name="description" content="Video production and digital media portfolio.">
-  <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
-  <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+  <link rel="icon" href="favicon.ico?v=4" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4">
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=4">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
   <div class="layout">
 
-    <!-- LEFT: navigation -->
-    <aside class="sidebar">
+    <!-- TOP: navigation -->
+    <header class="site-header">
       <nav class="menu" aria-label="Main">
         <a class="logo" href="index.html" aria-label="Home">
-          <img src="assets/title.png" alt="Thomas Avery's logo"
+          <img src="assets/title.png?v=2" alt="Thomas Avery's logo"
                onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'LOGO'}))">
         </a>
-        <div class="intro">
-          <p class="role">Video Producer &middot; Digital Media</p>
-          <p class="bio">
-            [One or two sentences in your own voice: what you make, and what makes it yours.]
-          </p>
+        <div class="marquee" aria-label="Video Production, sound design, ui/ux design, product videos, motion graphics, branding">
+          <div class="marquee-viewport">
+            <div class="marquee-track" aria-hidden="true">
+              <div class="marquee-group"><span>Video Production</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Sound Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>UI/UX Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Product Videos</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Motion graphics</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Branding</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span></div>
+              <div class="marquee-group"><span>Video Production</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Sound Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>UI/UX Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Product Videos</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Motion graphics</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Branding</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span></div>
+            </div>
+          </div>
         </div>
         <ul>
-          <li><a href="index.html" class="current">My Work</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="showreel.html">Showreel</a></li>
-          <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="index.html" class="current" aria-current="page">My Work</a></li>
+        <li><a href="about.html">About me</a></li>
+        <li><a href="contact.html">Get in touch</a></li>
         </ul>
       </nav>
-    </aside>
+    </header>
 
-    <!-- RIGHT: projects (right two thirds of the screen) -->
+    <!-- CONTENT -->
     <main class="projects" id="work">
+      <section class="intro">
+        <p class="bio">
+          <span class="hl">I&rsquo;m a visual-focused video editor in my final year of a Bachelor of Design (Digital Media) at RMIT, specialising in complex motion graphics and fast-paced visual storytelling.</span>
+        </p>
+      </section>
+
       <h2>Things I've made</h2>
 
       <!-- Video project: swap the files in assets/ for your own -->
       <article class="project">
-        <div class="media" data-placeholder="Video: project-one.mp4">
-          <video controls preload="metadata" poster="assets/project-one-poster.jpg">
-            <source src="assets/project-one.mp4" type="video/mp4">
-          </video>
+        <div class="media vimeo" data-placeholder="Loading video...">
+          <iframe src="https://player.vimeo.com/video/1238606779?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Critiquing AI: Surveillance prototype “Agatha” &amp; demo video"></iframe>
         </div>
         <div class="meta">
           <h3>Critiquing AI: Surveillance prototype &ldquo;Agatha&rdquo; &amp; demo video</h3>
-          <span class="tag">University Project</span>
+          <span class="tag">UX/UI &amp; Video Production</span>
         </div>
         <p>
           A mock dystopian surveillance system built from AI-generated people, modelled on Palantir&rsquo;s Gotham,
@@ -60,14 +68,12 @@
       </article>
 
       <article class="project">
-        <div class="media" data-placeholder="Video: project-two.mp4">
-          <video controls preload="metadata" poster="assets/project-two-poster.jpg">
-            <source src="assets/project-two.mp4" type="video/mp4">
-          </video>
+        <div class="media vimeo" data-placeholder="Loading video...">
+          <iframe src="https://player.vimeo.com/video/1238611521?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Luna Park app product video"></iframe>
         </div>
         <div class="meta">
-          <h3>Luna Park app prototype &amp; product video</h3>
-          <span class="tag">Group Project</span>
+          <h3>Luna Park app prototype &ldquo;LunaLand&rdquo; &amp; product video</h3>
+          <span class="tag">UX/UI &amp; Video Production</span>
         </div>
         <p>
           LunaLand, a concept app for Luna Park Melbourne with AR directions, ride info and a rewards system,
@@ -77,48 +83,45 @@
         <a class="btn" href="project-two.html">View more</a>
       </article>
 
-      <!-- Non-video project: use a thumbnail image instead -->
       <article class="project">
-        <div class="media" data-placeholder="Image: project-three.jpg">
-          <img src="assets/project-three.jpg" alt="Project Three thumbnail">
+        <div class="media vimeo" data-placeholder="Loading video...">
+          <iframe src="https://player.vimeo.com/video/1238612521?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="“Whippet in bed” sound composition"></iframe>
         </div>
         <div class="meta">
-          <h3>Project Three</h3>
-          <span class="tag">Motion Graphics</span>
-        </div>
-        <p>
-          A short description of what this project is and who it was for.
-        </p>
-        <p class="role-line"><strong>My role:</strong> Motion designer and sound editor.</p>
-        <a class="btn" href="project-three.html">View more</a>
-      </article>
-      <article class="project">
-        <div class="media" data-placeholder="Video: project-four.mp4">
-          <video controls preload="metadata" poster="assets/project-four-poster.jpg">
-            <source src="assets/project-four.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="meta">
-          <h3>Sound design: &ldquo;Whippet in bed&rdquo; composition</h3>
+          <h3>&ldquo;Whippet in bed&rdquo; sound composition</h3>
           <span class="tag">Sound Design</span>
         </div>
         <p>
-          A glitchy, low-bit Nintendo 64-style soundtrack for a low-poly animation of a dog being modelled,
-          where the sound sharpens from 4-bit to 16-bit as the model comes together.
+          A glitchy, low-bit Nintendo 64-style soundtrack for &ldquo;Whippet in bed&rdquo;, a low-poly animation of a dog being modelled
+          by Gina Moore, where the sound sharpens from 4-bit to 16-bit as the model comes together.
         </p>
         <p class="role-line"><strong>My role:</strong> Sound designer and composer.</p>
         <a class="btn" href="project-four.html">View more</a>
       </article>
 
       <article class="project">
-        <div class="media" data-placeholder="Video: project-five.mp4">
-          <video controls preload="metadata" poster="assets/project-five-poster.jpg">
-            <source src="assets/project-five.mp4" type="video/mp4">
-          </video>
+        <div class="media" data-placeholder="Image: project-six.jpg">
+          <img src="assets/project-six.jpg" alt="Redesigned QBD Books navigation with the Books dropdown open">
+        </div>
+        <div class="meta">
+          <h3>QBD &amp; Kayo website redesign</h3>
+          <span class="tag">UX/UI</span>
+        </div>
+        <p>
+          I user-tested the QBD Books and Kayo Sports websites, found where they frustrated people, redesigned both in a Figma prototype,
+          then retested with the same users to see what improved.
+        </p>
+        <p class="role-line"><strong>My role:</strong> User testing, UX/UI design and Figma prototyping.</p>
+        <a class="btn" href="project-six.html">View more</a>
+      </article>
+
+      <article class="project">
+        <div class="media vimeo" data-placeholder="Loading video...">
+          <iframe src="https://player.vimeo.com/video/1238642453?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Dating app prototype “Linx” &amp; product video"></iframe>
         </div>
         <div class="meta">
           <h3>Dating app prototype &ldquo;Linx&rdquo; &amp; product video</h3>
-          <span class="tag">University Project</span>
+          <span class="tag">UX/UI &amp; Video Production</span>
         </div>
         <p>
           A dating app concept that connects people through personality and prompts before photos,
@@ -131,7 +134,7 @@
 
   </div>
 
-  <script src="cursor.js"></script>
+  <script src="shapes.js"></script>
   <script>
     // Hovering a video thumbnail plays a silent preview; clicking takes over normal controls.
     document.querySelectorAll('.project video').forEach(function (video) {
@@ -153,5 +156,6 @@
       });
     });
   </script>
+  <script src="highlight.js"></script>
 </body>
 </html>

@@ -3,117 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Thomas Avery's Portfolio | About</title>
-  <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
-  <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+  <title>Thomas Avery's Portfolio | About me</title>
+  <link rel="icon" href="favicon.ico?v=4" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4">
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=4">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="layout">
 
-    <!-- LEFT: navigation -->
-    <aside class="sidebar">
+    <!-- TOP: navigation -->
+    <header class="site-header">
       <nav class="menu" aria-label="Main">
         <a class="logo" href="index.html" aria-label="Home">
-          <img src="assets/title.png" alt="Thomas Avery's logo"
+          <img src="assets/title.png?v=2" alt="Thomas Avery's logo"
                onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'LOGO'}))">
         </a>
-        <div class="intro">
-          <p class="role">Video Producer &middot; Digital Media</p>
-          <p class="bio">
-            [One or two sentences in your own voice: what you make, and what makes it yours.]
-          </p>
+        <div class="marquee" aria-label="Video Production, sound design, ui/ux design, product videos, motion graphics, branding">
+          <div class="marquee-viewport">
+            <div class="marquee-track" aria-hidden="true">
+              <div class="marquee-group"><span>Video Production</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Sound Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>UI/UX Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Product Videos</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Motion graphics</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Branding</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span></div>
+              <div class="marquee-group"><span>Video Production</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Sound Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>UI/UX Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Product Videos</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Motion graphics</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Branding</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span></div>
+            </div>
+          </div>
         </div>
         <ul>
-          <li><a href="index.html">My Work</a></li>
-          <li><a href="about.html" class="current">About</a></li>
-          <li><a href="showreel.html">Showreel</a></li>
-          <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="index.html">My Work</a></li>
+        <li><a href="about.html" class="current" aria-current="page">About me</a></li>
+        <li><a href="contact.html">Get in touch</a></li>
         </ul>
       </nav>
-    </aside>
+    </header>
 
-    <!-- RIGHT: page content (right two thirds of the screen) -->
+    <!-- CONTENT -->
     <main class="projects page">
-      <h1>About</h1>
+      <h1>About me</h1>
 
-      <div class="media portrait" data-placeholder="Photo or video of me: me.jpg">
-        <img src="assets/me.jpg" alt="Thomas Avery">
+      <div class="media" data-placeholder="Photo of me: about-web.jpg">
+        <img src="assets/about-web.jpg" alt="Thomas Avery editing video at his desk">
       </div>
 
       <section>
-        <p class="big">[Your statement in your own words: who you are, what you make and what drives you.]</p>
-        <p>[A paragraph or two about how you got into video, what you were obsessed with growing up, and the projects you enjoy most.]</p>
+        <p class="location">
+          <svg class="loc-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Melbourne, Australia
+        </p>
+        <p>Hey, I&rsquo;m Thomas. I&rsquo;m a video editor in my final year of a Bachelor of Design (Digital Media) at RMIT. I have high technical proficiency in Premiere Pro, After Effects and Illustrator, and I collaborate efficiently with others in both pre- and post-production, from scriptwriting and storyboarding to motion graphics, editing and sound. I adapt quickly to feedback and new ideas. My projects so far include app prototypes with product videos, an AI surveillance critique and an original electronic soundtrack.</p>
+        <p>Feel free to reach out, I&rsquo;d love to get in touch!</p>
       </section>
 
       <section class="cols">
         <div>
           <h2>Skills</h2>
           <ul>
-            <li>Editing</li>
+            <li>Filming video</li>
+            <li>Scriptwriting &amp; storyboarding</li>
+            <li>Motion graphics</li>
+            <li>Illustration, turned into motion graphics</li>
+            <li>Brand storytelling</li>
             <li>Colour grading</li>
             <li>Sound design</li>
+            <li>Adapting content for social media</li>
+            <li>Collaborating across multiple tasks</li>
           </ul>
         </div>
         <div>
-          <h2>Software</h2>
+          <h2>Tools</h2>
           <ul>
             <li>Premiere Pro</li>
             <li>After Effects</li>
             <li>DaVinci Resolve</li>
-            <li>Audition</li>
-          </ul>
-        </div>
-        <div>
-          <h2>Equipment</h2>
-          <ul>
-            <li>Camera body / lenses</li>
-            <li>Lighting kit</li>
-            <li>Audio recorder / mics</li>
+            <li>Final Cut Pro</li>
+            <li>Photoshop</li>
+            <li>Illustrator</li>
+            <li>Figma</li>
+            <li>REAPER</li>
           </ul>
         </div>
       </section>
 
       <section class="cols">
         <div>
-          <h2>Influences</h2>
-          <ul>
-            <li>[A film or director]</li>
-            <li>[A YouTuber or creator]</li>
-            <li>[A genre or style]</li>
+          <h2>Experience</h2>
+          <ul class="dated">
+            <li><span>2022 &ndash; 2026</span>Waiter, Hotel Phillip Island</li>
           </ul>
         </div>
         <div>
-          <h2>Outside of video</h2>
-          <ul>
-            <li>[A hobby]</li>
-            <li>[What you listen to while editing]</li>
-            <li>[Something unexpected]</li>
+          <h2>Education</h2>
+          <ul class="dated">
+            <li><span>2023 &ndash; 2027</span>Bachelor of Design (Digital Media), RMIT</li>
+            <li><span>2022 &ndash; 2023</span>Bachelor of Information Technology, RMIT</li>
           </ul>
         </div>
-      </section>
-
-      <section>
-        <h2>Experience &amp; education</h2>
-        <ul class="timeline">
-          <li><span>2023 &ndash; Present</span> Bachelor of Design (Digital Media), RMIT</li>
-          <li><span>2023</span> Freelance or placement title, Client</li>
-        </ul>
-      </section>
-
-      <!-- Save your CV as assets/cv.pdf -->
-      <section id="cv">
-        <h2>CV</h2>
-        <p>[A line inviting people to read the full version.]</p>
-        <p class="cv-actions">
-          <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener">View CV</a>
-          <a class="btn" href="assets/cv.pdf" download>Download PDF</a>
-        </p>
       </section>
     </main>
 
   </div>
+  <script src="shapes.js"></script>
 </body>
 </html>

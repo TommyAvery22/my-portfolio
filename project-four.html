@@ -4,53 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thomas Avery's Portfolio | Whippet in bed</title>
-  <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
-  <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+  <link rel="icon" href="favicon.ico?v=4" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4">
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=4">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="layout">
 
-    <!-- LEFT: navigation -->
-    <aside class="sidebar">
+    <!-- TOP: navigation -->
+    <header class="site-header">
       <nav class="menu" aria-label="Main">
         <a class="logo" href="index.html" aria-label="Home">
-          <img src="assets/title.png" alt="Thomas Avery's logo"
+          <img src="assets/title.png?v=2" alt="Thomas Avery's logo"
                onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'LOGO'}))">
         </a>
-        <div class="intro">
-          <p class="role">Video Producer &middot; Digital Media</p>
-          <p class="bio">
-            [One or two sentences in your own voice: what you make, and what makes it yours.]
-          </p>
+        <div class="marquee" aria-label="Video Production, sound design, ui/ux design, product videos, motion graphics, branding">
+          <div class="marquee-viewport">
+            <div class="marquee-track" aria-hidden="true">
+              <div class="marquee-group"><span>Video Production</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Sound Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>UI/UX Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Product Videos</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Motion graphics</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Branding</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span></div>
+              <div class="marquee-group"><span>Video Production</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Sound Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>UI/UX Design</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Product Videos</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Motion graphics</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span><span>Branding</span><span class="dot"><img src="assets/asterix-small.png?v=4" alt=""></span></div>
+            </div>
+          </div>
         </div>
         <ul>
-          <li><a href="index.html" class="current">My Work</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="showreel.html">Showreel</a></li>
-          <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="index.html" class="current" aria-current="page">My Work</a></li>
+        <li><a href="about.html">About me</a></li>
+        <li><a href="contact.html">Get in touch</a></li>
         </ul>
       </nav>
-    </aside>
+    </header>
 
-    <!-- RIGHT: project (right two thirds of the screen) -->
+    <!-- CONTENT -->
     <main class="projects">
     <div class="detail">
     <a class="back" href="index.html">&larr; Back to all work</a>
 
-    <h1>Sound design: &ldquo;Whippet in bed&rdquo; composition</h1>
+    <h1>&ldquo;Whippet in bed&rdquo; sound composition</h1>
     <p class="lead">A glitchy, low-bit soundtrack for a low-poly animation of a 3D dog being modelled, where the sound sharpens as the model comes into focus.</p>
 
-    <div class="media" data-placeholder="Video: project-four.mp4">
-      <video controls preload="metadata" poster="assets/project-four-poster.jpg">
-        <source src="assets/project-four.mp4" type="video/mp4">
-      </video>
+    <div class="media vimeo" data-placeholder="Loading video...">
+      <iframe src="https://player.vimeo.com/video/1238612521?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="“Whippet in bed” sound composition"></iframe>
     </div>
 
     <dl class="facts">
-      <div><dt>Type</dt><dd>University project, sound design (Assignment 1)</dd></div>
       <div><dt>My role</dt><dd>Sound designer and composer</dd></div>
       <div><dt>Year</dt><dd>2025</dd></div>
       <div><dt>Tools</dt><dd>[Add the software you used]</dd></div>
@@ -64,8 +65,8 @@
 
     <section>
       <h2>The brief</h2>
-      <p>For Assignment 1, I had to design and compose sound for an animation. I looked at Cafe figures first, for the variety of sounds it could suggest, but chose &ldquo;Whippet in bed&rdquo; because its simplicity gave me more freedom in the style of the sound design.</p>
-      <p>[Add the exact brief and who made the animation.]</p>
+      <p>For Assignment 1, I had to design and compose sound for an animation. I looked at Cafe figures first, for the variety of sounds it could suggest, but chose &ldquo;Whippet in bed&rdquo;, an animation by Gina Moore, because its simplicity gave me more freedom in the style of the sound design.</p>
+      <p>[Add the exact brief.]</p>
     </section>
 
     <section>
@@ -109,5 +110,6 @@
     </main>
 
   </div>
+  <script src="shapes.js"></script>
 </body>
 </html>

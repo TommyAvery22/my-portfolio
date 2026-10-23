@@ -4,9 +4,10 @@
   --text: #ffffff;
   --muted: rgba(249, 242, 242, 0.58);
   --accent: #ff6a3d;
-  --line: #ffffff;
-  --display: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --blue: #0a47ff;        /* really electric blue for hovers */
+  --line: #4a4a4a;        /* grey dividers */
+  --display: "Familjen Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body: "Familjen Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,83 +27,121 @@ a { color: inherit; text-decoration: none; }
 
 ::selection { background: var(--accent); color: #fff; }
 
-/* ---------- Home layout: left third nav | right two thirds projects ---------- */
+/* ---------- Layout: top navigation, centred content ---------- */
 
-.sidebar {
-  position: fixed;
+.site-header {
+  position: sticky;
   top: 0;
+  z-index: 50;
+  background: var(--bg);                 /* solid: the bar itself is not transparent or blurred */
+  border-bottom: 1px solid var(--line);
+}
+
+/* The page fades into the background as it approaches the bar: a strip just below the bar that goes
+   from the page colour (right under the bar) to clear. Content scrolling up dissolves into it.
+   The stops ease the fade so there's no visible edge. pointer-events: none keeps links underneath clickable. */
+.site-header::after {
+  content: "";
+  position: absolute;
   left: 0;
-  width: 33.3333%;
-  height: 100vh;
-  padding: 56px 40px;
-  overflow-y: auto;
+  right: 0;
+  top: 100%;
+  height: 120px;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgba(2, 2, 2, 1) 0%,
+    rgba(2, 2, 2, 0.92) 15%,
+    rgba(2, 2, 2, 0.72) 35%,
+    rgba(2, 2, 2, 0.4) 58%,
+    rgba(2, 2, 2, 0.14) 80%,
+    rgba(2, 2, 2, 0) 100%);
+}
+
+.site-header .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6px 40px;
 }
 
 .projects {
-  margin-left: 33.3333%;
-  width: 66.6667%;
-  padding: 56px 64px 72px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 64px 40px 96px;
   display: flex;
   flex-direction: column;
-  gap: 88px;
+  gap: 120px;            /* space between projects */
   min-height: 100vh;
 }
 
 /* ---------- Navigation ---------- */
 
-.sidebar .logo { display: block; padding-bottom: 24px; }
-.sidebar .logo img { display: block; width: 100%; max-width: 400px; height: auto; }
-.sidebar .logo-fallback {
+.site-header .logo { display: block; flex: none; }
+.site-header .logo img { display: block; height: 40px; width: auto; max-width: 100%; }
+.site-header .logo-fallback {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   border: 1px dashed var(--muted);
-  border-radius: 10px;
+  border-radius: 8px;
   color: var(--muted);
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   letter-spacing: 0.12em;
 }
 
-.sidebar nav ul { list-style: none; }
-.sidebar nav li { border-bottom: 1px solid var(--line); }
-.sidebar nav li a {
-  display: block;
-  padding: 12px 0;
+.site-header ul { list-style: none; display: flex; gap: 28px; }
+.site-header li a {
+  display: inline-block;
+  line-height: 1.2;       /* tighter line box so the underline hugs the text */
+  padding: 0 0 2px;
   font-family: var(--display);
-  font-size: clamp(0.95rem, 1.3vw, 1.2rem);
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   color: var(--muted);
-  transition: color 0.25s, transform 0.25s;
+  border-bottom: 1px solid transparent;
+  transform-origin: center;
+  transition: transform 0.9s ease, color 0.6s ease, border-color 0.6s ease, text-shadow 0.6s ease;
 }
-.sidebar nav li a:hover { color: var(--text); transform: translateX(8px); }
-.sidebar nav li a:hover::before { content: "→ "; color: var(--accent); }
+.site-header li a:hover {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+  text-shadow: 0 0 14px rgba(10, 71, 255, 0.75);   /* glow keeps the saturated blue readable on black */
+  transform: scale(1.08);
+}
+.site-header li a.current { color: var(--text); border-bottom-color: var(--line); }
+.site-header li a.current:hover { color: var(--blue); border-bottom-color: var(--blue); text-shadow: 0 0 14px rgba(10, 71, 255, 0.75); }
 
-/* ---------- Intro (under the logo) ---------- */
+/* ---------- Intro (top of the home page) ---------- */
 
-.intro { padding: 24px 0 32px; border-bottom: 1px solid var(--line); }
+.intro { padding-bottom: 40px; border-bottom: 1px solid var(--line); }
 
 .intro .role {
   color: var(--accent);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
 }
 
 .intro .bio {
-  margin-top: 14px;
-  color: var(--muted);
-  max-width: 34ch;
-  font-size: 0.95rem;
+  margin-top: 16px;
+  text-transform: none;
+  color: var(--text);
+  max-width: 56ch;             /* wider, so the sentence doesn't wrap early */
+  text-wrap: balance;          /* evens out the lines so no single word is left alone on the last one */
+  font-size: 1.5rem;
+  line-height: 1.4;
 }
 
-/* ---------- Text pages (About, Showreel, Contact) ---------- */
+/* ---------- Text pages (About, Contact) ---------- */
 
-.sidebar nav li a.current { color: var(--text); }
-
-.page { gap: 48px; }
+.page { gap: 48px; max-width: 920px; }
 .page h1 {
   font-family: var(--display);
   font-size: clamp(2.4rem, 5vw, 4.4rem);
@@ -125,6 +164,8 @@ a { color: inherit; text-decoration: none; }
 .page .cols li { padding: 6px 0; border-bottom: 1px solid var(--line); color: rgba(255, 255, 255, 0.78); }
 .timeline li { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); color: rgba(255, 255, 255, 0.78); }
 .timeline span { color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+/* Dates in the Experience / Education columns sit on their own line above each entry */
+.page .dated span { display: block; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
 .page .note { color: var(--muted); font-size: 0.9rem; margin-top: -24px; }
 
 .contact-list { list-style: none; border-top: 1px solid var(--line); }
@@ -137,22 +178,45 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.1rem;
 }
 .contact-list span { color: var(--accent); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; align-self: center; }
-.contact-list a:hover { color: var(--accent); }
+.contact-list a:hover { color: var(--blue); text-shadow: 0 0 14px rgba(10, 71, 255, 0.75); }   /* electric blue, with the same glow as the nav hover */
 
 /* ---------- Extras ---------- */
 
-.page .portrait { aspect-ratio: 4 / 5; max-width: 360px; }
-.page .portrait + * { margin-top: 0; }
 
-/* ---------- CV buttons (About page) ---------- */
+/* ---------- CV buttons (Contact page) ---------- */
+/* Two-class selectors (.btn.cv-btn) so these always beat the general .btn rule further down. */
 
-.cv-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.page section .cv-actions { margin-top: 20px; }
-.cv-actions .btn { margin-top: 0; }
+.contact-list .cv-row { align-items: center; }
+.cv-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.btn.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  padding: 12px 24px;
+  border: 2px solid #fff;
+  border-radius: 28px 14px 26px 18px / 18px 26px 14px 28px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.btn.cv-btn .btn-icon { flex: none; transition: transform 0.35s ease; }
+
+/* Both buttons: solid white with dark text; electric blue on hover */
+.btn.cv-btn-solid,
+.btn.cv-btn-outline { background: #fff; color: #020202; }
+.contact-list a.btn.cv-btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+.btn.cv-btn-solid:hover .btn-icon { transform: translateY(3px); }
+.btn.cv-btn-outline:hover .btn-icon { transform: translate(2px, -2px); }
 
 /* ---------- Project cards ---------- */
 
 .projects > h2 {
+  margin-top: 8px;        /* with the 120px gap, keeps the space above the heading at about 128px */
+  margin-bottom: -92px;   /* pulls the first project up: the 120px gap becomes about 28px */
   font-family: var(--display);
   font-size: 0.8rem;
   letter-spacing: 0.2em;
@@ -164,7 +228,7 @@ a { color: inherit; text-decoration: none; }
 .media {
   position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: 14px;
+  border-radius: 6px;
   overflow: hidden;
   background: linear-gradient(135deg, #26262c, #18181c);
   box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.8);
@@ -183,6 +247,17 @@ a { color: inherit; text-decoration: none; }
   transition: transform 0.6s ease;
 }
 .project:hover .media img { transform: scale(1.03); }
+
+/* Embedded players (Vimeo) fill the 16:9 frame */
+.media iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  z-index: 1;
+}
 
 /* Visible placeholder label until real media is added */
 .media::after {
@@ -232,20 +307,22 @@ a { color: inherit; text-decoration: none; }
   display: inline-block;
   margin-top: 22px;
   padding: 11px 26px;
-  border: 1px solid var(--text);
+  border: 2px solid var(--text);
   color: var(--text);
-  border-radius: 999px;
+  border-radius: 28px 14px 26px 18px / 18px 26px 14px 28px;   /* rounded, slightly uneven outline (about half the button height, so it stays soft) */
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   transition: background 0.25s, color 0.25s, border-color 0.25s;
 }
-.btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
 
 /* ---------- Detail pages ---------- */
 
 .detail {
+  width: 100%;
   max-width: 920px;
+  margin: 0 auto;
 }
 
 .detail .back { color: var(--muted); font-size: 0.9rem; transition: color 0.2s; }
@@ -290,35 +367,13 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Responsive ---------- */
 
-@media (max-width: 900px) {
-  .sidebar { position: static; width: auto; height: auto; padding: 32px 24px; }
-  .projects { margin-left: 0; width: auto; padding: 32px 24px 56px; }
+@media (max-width: 720px) {
+  .site-header .menu { padding: 8px 20px; flex-wrap: wrap; }
+  .site-header ul { gap: 20px; }
+  .site-header .logo img { height: 34px; }
+  .projects { padding: 40px 20px 64px; }
+  .intro .bio { font-size: 1.25rem; }
 }
-
-/* ---------- Custom cursor (video thumbnails only) ---------- */
-
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 88px;
-  height: 88px;
-  margin: -44px 0 0 -44px;
-  border-radius: 50%;
-  background: #fff;
-  color: #121214;
-  display: grid;
-  place-items: center;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  pointer-events: none;
-  z-index: 1000;
-  opacity: 0;
-  transform: translate(-100px, -100px) scale(0.4);
-  transition: opacity 0.2s;
-}
-.cursor.on { opacity: 1; }
 
 /* ---------- Readable body copy: sentence case, a little larger, more spacing ---------- */
 
@@ -330,7 +385,6 @@ a { color: inherit; text-decoration: none; }
 .page section p,
 .page section li,
 .page .note,
-.intro .bio,
 .timeline li {
   text-transform: none;
   font-size: 1.0625rem;
@@ -342,7 +396,6 @@ a { color: inherit; text-decoration: none; }
 .detail .lead,
 .page .lead { font-size: 1.2rem; color: var(--muted); }
 
-.intro .bio { font-size: 0.98rem; }
 
 .project .role-line { font-size: 0.95rem; color: var(--muted); }
 
@@ -357,3 +410,136 @@ a { color: inherit; text-decoration: none; }
 
 /* Screenshots that should not be cropped to 16:9 */
 .media.contain img { object-fit: contain; background: #f4f4f4; }
+
+/* ---------- Scrolling keywords (inside the top navigation bar) ---------- */
+
+.site-header .marquee {
+  flex: 0 1 420px;      /* fixed narrow width instead of filling the gap */
+  min-width: 0;
+  margin: 0 auto;       /* sits centred between the logo and the links */
+}
+
+/* Fixed wrapper: the fade stays at the edges while the track moves inside it */
+.marquee-viewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+
+.marquee-group {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+
+.marquee-group span {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  padding: 0 0.9em;
+}
+
+.marquee-group .dot { padding: 0; display: flex; align-items: center; }
+.marquee-group .dot img { display: block; height: 22px; width: auto; }
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+@media (max-width: 720px) {
+  .site-header .menu ul { order: 2; width: auto; }
+  .site-header .marquee { order: 3; flex: 0 0 100%; }
+}
+
+/* ---------- Highlighted text: orange highlighter behind white text (home page intro) ---------- */
+
+.hl {
+  background: var(--accent);
+  color: #fff;
+  text-transform: none;          /* normal capitalisation, not all caps */
+  font-weight: 600;
+  padding: 0.08em 0.3em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;   /* keeps the padding on every line when a highlight wraps */
+}
+/* ---------- Case-study figures (QBD & Kayo page) ---------- */
+
+.fig { margin: 0; }
+.fig figcaption {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: none;
+  line-height: 1.4;
+}
+.gallery.one { grid-template-columns: 1fr; }
+.gallery.two { grid-template-columns: repeat(2, 1fr); }
+.media.contain.dark img { background: #0b1020; }
+.case-note {
+  margin-top: 28px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-transform: none;
+  max-width: 64ch;
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .gallery.two { grid-template-columns: 1fr; }
+}
+
+/* ---------- Location line (About page) ---------- */
+
+.page .location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+.page .location .loc-icon { flex: none; color: var(--accent); }
+
+/* ---------- Highlighter sweep (home page) ---------- */
+
+/* Once the script has split the text into words, each word draws its own highlight */
+.hl.is-animated { background: none; padding: 0; }
+
+.hl-word {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  padding-top: 0.08em;
+  padding-bottom: 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* The sweep only runs once the script adds .play, i.e. when the visitor arrives at the page */
+.hl.play .hl-word { animation: hl-sweep var(--dur, 0.3s) linear var(--delay, 0s) forwards; }
+
+/* Extra padding at the start and end of each row, with a matching negative margin so the text never moves */
+.hl-word.row-start { padding-left: 0.3em; margin-left: -0.3em; }
+.hl-word.row-end { padding-right: 0.3em; margin-right: -0.3em; }
+
+@keyframes hl-sweep { to { background-size: 100% 100%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hl-word,
+  .hl.play .hl-word { animation: none; background-size: 100% 100%; }
+}
