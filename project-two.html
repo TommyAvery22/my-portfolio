@@ -47,7 +47,7 @@
     <h1>Luna Park app prototype &ldquo;LunaLand&rdquo; &amp; product video</h1>
     <p class="lead">LunaLand is a concept app that turns a day at Luna Park Melbourne into a game, with ride info, AR directions and a points system, shown in a 65-second product video.</p>
 
-    <div class="media vimeo" data-placeholder="Loading video...">
+    <div class="media vimeo" id="video" data-placeholder="Loading video...">
       <iframe src="https://player.vimeo.com/video/1238611521?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Luna Park app product video"></iframe>
     </div>
 
@@ -60,7 +60,6 @@
     <section>
       <h2>The story behind it</h2>
       <p>Luna Park is a Melbourne icon, but its charm is let down by long queues and high prices. Our team of five designers set out to fix that with an app, from the first research through to the product video. This was a university exercise based on a client brief, not an official Luna Park project.</p>
-      <p>[Add a personal line: a memory of Luna Park, or what you enjoyed most about working in a team.]</p>
     </section>
 
     <section>
@@ -79,20 +78,21 @@
         <li>Cleanliness, maintenance and inconsistent customer service</li>
         <li>Frustration with the pay-per-ride system</li>
       </ul>
-      <p>We built user personas (I created the Jack Hill persona) and compared the Disneyland, Universal Studios and Village Roadshow Theme Parks apps with a SWOT analysis of each.</p>
+      <p>We built user personas to cover a range of visitors, and compared the Disneyland, Universal Studios and Village Roadshow Theme Parks apps with a SWOT analysis of each. I created Sophie Smith, a 16-year-old high school student from Melbourne.</p>
+      <p><strong>Sophie</strong> loves trying new activities with her friends and family, and has visited Luna Park a few times. She wants an app that helps her save money on tickets, food and souvenirs so she can visit more often, with interactive features such as ride information and exclusive offers. She gets frustrated by budget limits and long queues, and struggles to find creative ideas for social media photos. Our user journey map follows her day: she plans around her budget, buys a pass and downloads the app on arrival, has her ticket scanned at her first ride, checks wait times and uses the photo filters, spends her points on food and drinks, and shares her photos afterwards to earn more.</p>
       <p>Our answer, LunaLand, centres on a points system. Visitors scan QR codes before each ride and earn points for sharing photos made with custom AR filters. They redeem the points for food, drinks and souvenirs through their ticket barcode. An optional monthly subscription adds unlimited entry, queue-skipping access and bonus points. The app also includes an interactive map and 360 video previews of rides.</p>
-      <div class="gallery">
-        <div class="media" data-placeholder="Jack Hill persona"></div>
-        <div class="media" data-placeholder="Competitor SWOT"></div>
+      <div class="gallery one">
+        <figure class="fig"><div class="media contain" style="aspect-ratio: 1250 / 790;" data-placeholder="Persona: Sophie Smith"><img src="assets/lunaland-persona-sophie.png" alt="Sophie Smith user persona"></div><figcaption>Persona: Sophie Smith</figcaption></figure>
+        <figure class="fig"><div class="media contain" style="aspect-ratio: 1223 / 593;" data-placeholder="User journey map: Sophie Smith"><img src="assets/lunaland-journey-sophie.png" alt="User journey map following Sophie Smith through a day at Luna Park"></div><figcaption>User journey map: Sophie Smith</figcaption></figure>
       </div>
     </section>
 
     <section>
       <h2>My contribution</h2>
       <ul>
-        <li><strong>UI design in Figma.</strong> I worked with Jausyan on the low and high fidelity mockups. I designed the Map and Ticket screens, and we adjusted each other&rsquo;s screens to keep everything consistent.</li>
+        <li><strong>UI design in Figma.</strong> I worked with another designer on the team on the low and high fidelity mockups. I designed the Map and Ticket screens, and we adjusted each other&rsquo;s screens to keep everything consistent.</li>
         <li><strong>Branding.</strong> I created the style guide covering the fonts and colours for the interface, and developed four illustrated ideas for the app logo and icon.</li>
-        <li><strong>User research.</strong> I created the Jack Hill user persona.</li>
+        <li><strong>User research.</strong> I created the Sophie Smith user persona.</li>
         <li><strong>Writing and planning.</strong> I helped write the abstract, wrote the UI and AR sections of the development process, and helped build the budget.</li>
       </ul>
     </section>
@@ -100,24 +100,29 @@
     <section>
       <h2>Design process</h2>
       <p><strong>Low fidelity.</strong> The first wireframes captured our early ideas and showed how features related to each other. Going through them again and again let us drop features that were redundant or impractical and expand the ideas that worked.</p>
-      <p><strong>High fidelity.</strong> We then refined the core screens, keeping fonts, spacing, colours, sizing and component shapes consistent. We stayed close to Luna Park&rsquo;s current look so the app wouldn&rsquo;t feel disconnected from its website and brand, and used bold colours and bubbly text to keep it fun. Because Jausyan and I had different ideas about styling, we talked constantly and worked in Figma at the same time, which helped us arrive at one consistent style.</p>
-      <p><strong>Style guide.</strong> The style guide set out the fonts and colours used across every screen.</p>
-      <div class="gallery">
-        <div class="media" data-placeholder="Low fidelity wireframes"></div>
-        <div class="media" data-placeholder="Map screen"></div>
-        <div class="media" data-placeholder="Ticket screen"></div>
-        <div class="media" data-placeholder="Style guide"></div>
-        <div class="media" data-placeholder="Logo concepts"></div>
+      <p><strong>High fidelity.</strong> We then refined the core screens, keeping fonts, spacing, colours, sizing and component shapes consistent. We stayed close to Luna Park&rsquo;s current look so the app wouldn&rsquo;t feel disconnected from its website and brand, and used bold colours and bubbly text to keep it fun. Because we each had different ideas about styling, we talked constantly and worked in Figma at the same time, which helped us arrive at one consistent style.</p>
+      <p><strong>Structure.</strong> The team mapped the app in a sitemap, from scanning the QR code at the park entrance and downloading the app, through sign-up, to the home page and its sections: map, ride information, tickets, points, games and profile.</p>
+      <p><strong>Style guide.</strong> I wrote the style guide that sets the fonts and colours for every screen. Koulen is used for page headings and the ticket, Londrina Solid for ride names and points, Lexend Deca for subheadings and body text, and Lilita One for the rides-remaining number. French rose highlights the navigation, Celtic blue colours the height and time icons, and the ticket is French violet with a Naples yellow border.</p>
+      <div class="gallery one">
+        <figure class="fig"><div class="media contain" style="aspect-ratio: 1342 / 800;" data-placeholder="Low fidelity wireframes"><img src="assets/lunaland-wireframes.png" alt="Low fidelity wireframes for the LunaLand app"></div><figcaption>Low fidelity wireframes</figcaption></figure>
+        <figure class="fig"><div class="media contain" style="aspect-ratio: 1365 / 626;" data-placeholder="App sitemap"><img src="assets/lunaland-sitemap.png" alt="LunaLand app sitemap"></div><figcaption>App sitemap</figcaption></figure>
+        <figure class="fig"><div class="media contain" style="aspect-ratio: 1173 / 779;" data-placeholder="Style guide"><img src="assets/lunaland-style-guide.jpg" alt="LunaLand style guide showing the logo, fonts and colours"></div><figcaption>Style guide</figcaption></figure>
+      </div>
+      <div class="gallery phones">
+        <figure class="fig"><div class="media contain phone" data-placeholder="Home"><img src="assets/lunaland-home.png" alt="LunaLand home screen showing rides"></div><figcaption>Home</figcaption></figure>
+        <figure class="fig"><div class="media contain phone" data-placeholder="Map (my screen)"><img src="assets/lunaland-map.png" alt="LunaLand map screen"></div><figcaption>Map (my screen)</figcaption></figure>
+        <figure class="fig"><div class="media contain phone" data-placeholder="Ticket (my screen)"><img src="assets/lunaland-ticket.png" alt="LunaLand ticket screen showing points and rides remaining"></div><figcaption>Ticket (my screen)</figcaption></figure>
       </div>
     </section>
 
     <section>
       <h2>Gamification &amp; AR</h2>
-      <p><strong>Points.</strong> Riders earn points by scanning the QR code at a ride&rsquo;s entrance. Each ride has set points, with bonuses for quieter rides on the day. They can also earn points by sharing Luna Park photos to Facebook, Instagram or Twitter, with limits so people use both systems.</p>
+      <p><strong>Points.</strong> Riders earn points by scanning the QR code at a ride&rsquo;s entrance. Each ride has set points, with bonuses for quieter rides on the day. They can also earn points by sharing Luna Park photos to Facebook, Instagram or Twitter, with limits so people use both systems. In the prototype, photo filters unlock level by level, and each level is worth more coins.</p>
       <p><strong>AR.</strong> Augmented reality works inside the map. Like Google Maps, augmented footsteps show the path ahead and guide the user to the ride they&rsquo;ve chosen. Pointing the camera at a ride brings up extra information about it.</p>
-      <div class="gallery">
-        <div class="media" data-placeholder="AR map"></div>
-        <div class="media" data-placeholder="Points and rewards"></div>
+      <p><strong>More features.</strong> Rides get 360 video previews, so people can see a ride before they go or relive it afterwards, which keeps them engaged in the app for longer. The sound design we planned is playful and themed around an amusement park, with popping balloons, classic jingles and cartoon effects. A page on Luna Park&rsquo;s history was planned for a later stage.</p>
+      <div class="gallery phones">
+        <figure class="fig"><div class="media contain phone" data-placeholder="Games"><img src="assets/lunaland-games.png" alt="LunaLand games screen showing photo filter levels and coins"></div><figcaption>Games</figcaption></figure>
+        <figure class="fig"><div class="media contain phone" data-placeholder="AR map"><img src="assets/lunaland-ar-map.png" alt="LunaLand AR map with augmented footsteps leading the way"></div><figcaption>AR map</figcaption></figure>
       </div>
     </section>
 
@@ -134,7 +139,7 @@
     </section>
 
     <section>
-      <h2>The product video</h2>
+      <h2><a class="jump-link" href="#video">The product video <span aria-hidden="true">&uarr;</span></a></h2>
       <p>The final piece is a 65-second product video that shows the app working. Before editing, we planned it as a short script and shot list:</p>
       <ul>
         <li>An introduction that mentions the main features</li>
@@ -145,12 +150,12 @@
         <li>An end screen with the LunaLand logo and the line &ldquo;A whole new theme park experience for Melbourne&rdquo;</li>
       </ul>
       <p>We used Rotato to present the app screens on a phone, and put the footage together in Premiere Pro and After Effects.</p>
-      <p>[Add what you did on the video: footage, editing, motion graphics, sound.]</p>
+      <p>My part was storyboarding, crafting the motion graphics in After Effects and editing the advertisement in Premiere Pro.</p>
     </section>
 
     <section>
       <h2>Reflection</h2>
-      <p>[What worked well working as a team of five, what you would do differently, and what you learned about designing an app.]</p>
+      <p>Out of all my uni groups, this one was probably my favourite. We all had very different skillsets and backgrounds but we worked really well together. We all had trust in each other&rsquo;s abilities which allowed everyone to focus on their respective roles, resulting in a more polished final concept.</p>
     </section>
 
     <section>

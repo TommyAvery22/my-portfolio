@@ -71,7 +71,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 64px 40px 96px;
+  padding: 130px 40px 96px;   /* top space clears the fade strip under the nav bar (120px) */
   display: flex;
   flex-direction: column;
   gap: 120px;            /* space between projects */
@@ -94,13 +94,13 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.12em;
 }
 
-.site-header ul { list-style: none; display: flex; gap: 28px; }
+.site-header ul { list-style: none; display: flex; gap: 32px; }
 .site-header li a {
   display: inline-block;
   line-height: 1.2;       /* tighter line box so the underline hugs the text */
   padding: 0 0 2px;
   font-family: var(--display);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--muted);
@@ -371,7 +371,7 @@ a { color: inherit; text-decoration: none; }
   .site-header .menu { padding: 8px 20px; flex-wrap: wrap; }
   .site-header ul { gap: 20px; }
   .site-header .logo img { height: 40px; }
-  .projects { padding: 40px 20px 64px; }
+  .projects { padding: 120px 20px 64px; }
   .intro .bio { font-size: 1.25rem; }
 }
 
@@ -555,3 +555,17 @@ a { color: inherit; text-decoration: none; }
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 .text-link:hover { color: var(--blue); text-decoration-color: var(--blue); }
+
+/* Phone screenshots (LunaLand page): portrait frames, left-aligned at a fixed width */
+.gallery.phones { grid-template-columns: repeat(auto-fill, minmax(150px, 210px)); }
+.media.phone { aspect-ratio: 9 / 19.5; }
+
+/* ---------- Heading that jumps to the video on the same page ---------- */
+
+.jump-link { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+.jump-link span { display: inline-block; margin-left: 0.15em; color: var(--accent); transition: transform 0.25s ease; }
+.jump-link:hover { color: var(--blue); }
+.jump-link:hover span { transform: translateY(-3px); }
+
+/* Land with the video clear of the sticky navigation bar */
+#video { scroll-margin-top: 110px; }

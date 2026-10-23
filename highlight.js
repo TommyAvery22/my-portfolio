@@ -1,7 +1,7 @@
 // Highlighter sweep for the home page intro.
 // The highlighted sentence is split into words. Each word's orange highlight grows from left to right,
 // one word after another, so the sweep travels along a row and then drops to the next row, like a highlighter pen.
-//  - The whole sweep eases in and out (slow, fast, slow).
+//  - The whole sweep eases in and out (slow start, fast middle, long gentle finish).
 //  - It waits a second after the page loads before it begins.
 //  - It pauses briefly each time it moves down to the next row.
 //  - It plays when the visitor arrives at the page (including coming back with the back button), and only
@@ -12,19 +12,29 @@
   if (!els.length) return;
 
   var START = 1;        // seconds to wait after the page loads before the sweep begins
-  var DURATION = 2;     // seconds the sweep itself takes, from the first word to the last (not counting row pauses). Bigger is slower.
+  var DURATION = 2.8;   // seconds the sweep itself takes, from the first word to the last (not counting row pauses). Bigger is slower.
   var ROW_PAUSE = 0.45; // extra seconds to wait each time the highlighter drops to the next row
 
-  // Ease in and out: slow at the start, fastest in the middle, slow at the end (one smooth curve, no sudden changes in speed).
-  // EASE_IN makes the start even slower: 1 is an even ease, and bigger numbers give a longer, gentler start.
-  var EASE_IN = 1.5;
+  // Ease in and out: slow at the start, fastest in the middle, and a long, gentle slowdown at the end.
+  // This is a standard "cubic-bezier" easing curve, worked backwards: given how far along the text we are
+  // (0 to 1), timeAt() returns the moment in time (0 to 1) that the highlighter reaches that point.
+  //   EASE_START: bigger = a longer, slower start.   EASE_END: smaller = a longer, slower finish.
+  var EASE_START = 0.6;
+  var EASE_END = 0.35;
 
-  // Given how far along the text we are (0 to 1), this returns the moment in time (0 to 1)
-  // that the highlighter reaches that point.
-  function timeAt(progress) {
-    var p = Math.min(1, Math.max(0, progress));
-    return Math.pow(Math.acos(1 - 2 * p) / Math.PI, 1 / EASE_IN);
-  }
+  var timeAt = (function () {
+    function x(s) { var m = 1 - s; return 3 * m * m * s * EASE_START + 3 * m * s * s * EASE_END + s * s * s; }  // time along the curve
+    function y(s) { var m = 1 - s; return 3 * m * s * s + s * s * s; }                                          // progress along the curve
+    return function (progress) {
+      var p = Math.min(1, Math.max(0, progress));
+      var lo = 0, hi = 1;
+      for (var i = 0; i < 40; i++) {            // find the point on the curve where progress equals p
+        var mid = (lo + hi) / 2;
+        if (y(mid) < p) lo = mid; else hi = mid;
+      }
+      return x((lo + hi) / 2);
+    };
+  })();
 
   Array.prototype.forEach.call(els, function (el) {
     // Split the sentence into words; the space after a word belongs to it, so the highlight is continuous
