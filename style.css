@@ -619,3 +619,9 @@ a { color: inherit; text-decoration: none; }
   .gallery.papers { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .gallery.papers .media:hover { transform: none; box-shadow: none; }
 }
+
+/* Embedded music players (Whippet in bed page): side by side on wide screens, stacked on narrow ones */
+.audio-embeds { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 24px; }
+.audio-embed { margin: 0; }
+.audio-embed iframe { display: block; width: 100%; border: 0; }
+.audio-embed figcaption { margin-top: 8px; font-size: 0.8rem; color: var(--muted); text-transform: none; line-height: 1.4; }
